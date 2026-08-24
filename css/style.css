@@ -1,0 +1,206 @@
+/* 1. PALETA DE COLORES SACADOS DE https://www.media.io/es/color-palette/gaming-color-palette.html EJEMPLO 15*/
+:root {
+  --bg-principal:   #1A1A2E;  /* fondo oscuro general */
+  --bg-tarjeta:     #16213E;  /* fondo para contenedores (header, tarjetas, footer) */
+  --acento-rojo:    #E94560;  /* rojo para destacar */
+  --acento-cian:    #00ADB5;  /* cian para links y botones */
+  --texto-amarillo: #F9ED69;  /* amarillo para titulos y precios */
+  --texto-blanco:   #FFFFFF;  /* blanco para lectura */
+}
+
+/* 2. RESET GLOBAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-principal);
+  color: var(--texto-blanco);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 1280px; 
+  margin: 0 auto;
+}
+
+/* 3. HEADER */
+header {
+  background-color: var(--bg-tarjeta);
+  border-bottom: 2px solid var(--acento-cian);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  align-items: center; 
+}
+/* SEPARACION DEL HEADER EN 3 COLUMNAS */
+/* el logo ocupa la columna izquierda */
+header img {
+  grid-column: 1;
+  justify-self: start; 
+}
+
+/* el titulo ocupa la columna del centro */
+header h1 {
+  grid-column: 2;
+  text-align: center;
+  color: var(--texto-blanco);
+}
+
+/* la tercera columna queda vacia */
+/* el subtitulo y el menu see expanden a traves de las 3 columnas */
+header p, 
+header nav {
+  grid-column: 1 / -1; 
+  text-align: center;
+  margin-top: 10px;
+}
+/* cambia la orientacion de la lista de forma horizontal */
+.menu-lista {
+  list-style: none;         
+  display: flex;            
+  justify-content: center;  
+  gap: 15px;                
+  margin-top: 15px;
+}
+/* formateado de los links */
+.menu-enlace {
+  text-decoration: none;             /* elimina el subrayado de los links */
+  color: var(--texto-blanco);        /* color de texto */
+  font-weight: bold;                 /* texto en negrita */
+  padding: 8px 16px;                 /* Le da relleno interior en forma de boton */
+  border-radius: 6px;                /* redondea las esquinas del boton */
+  transition: background-color 0.3s; /* efecto de transicion */
+}
+/* efecto al pasar el puntero resalta en cian y cambia el color del texto */
+.menu-enlace:hover {
+  background-color: var(--acento-cian);
+  color: var(--bg-principal);
+}
+/* boton activo de color rojo */
+.menu-enlace.activo {
+  background-color: var(--acento-rojo);
+  color: var(--texto-blanco);
+}
+
+/* 4. PRODUCTOS */
+/* selector por id #productos */
+/* titulo de la seccion en color amarillo y centrado */
+#productos h2 {
+  color: var(--texto-amarillo);
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* el texto de los parrafos de la descripcion son de color gris */
+#productos p {
+  text-align: center;
+  color: #a0aec0;
+  margin-bottom: 20px;
+}
+
+/* grilla responsiva para los productos, organiza las tarjetas en columnas */
+main section div ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* 5. TARJETAS */
+/* estructura de las tarjetas */
+.tarjeta {
+  background-color: var(--bg-tarjeta);
+  border-radius: 12px;       
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #233554;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+/* estandariza el tamaño de las imagenes de los juegos sin distorcionarlas*/
+.tarjeta-imagen {
+  width: 200px;              
+  height: 200px;             
+  object-fit: cover;         
+  object-position: center;  
+  border-radius: 8px;        
+  margin: 15px 0;
+}
+
+/* titulo de la tarjeta en color blanco */
+.tarjeta-titulo {
+  color: var(--texto-blanco);
+  margin-bottom: 10px;
+}
+
+/* color del texto precio */
+.tarjeta-precio strong {
+  color: var(--texto-amarillo);
+}
+
+/* boton ver detalles al pie de la tarjeta con color cian */
+.btn-detalles {
+  display: inline-block;
+  margin-top: auto;          
+  background-color: var(--acento-cian);
+  color: var(--bg-principal);
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* selecciona cada 4 tarjetas y le da un diseño diferente */
+main section div ul > li:nth-child(4n) .tarjeta {
+  background-color: var(--acento-rojo);
+  border: 2px solid var(--texto-amarillo);
+}
+
+/* cambia el formato del boton para resaltar en el formato especial de la tarjeta diferente */
+main section div ul > li:nth-child(4n) .btn-detalles {
+  background-color: var(--texto-amarillo);
+  color: var(--bg-principal);
+}
+
+/* 6. FOOTER Y CONTACTO */
+/* selector por id #contacto */
+#contacto {
+  padding: 10px;
+}
+
+/* estilo contenedor del footer con borde superior cian */
+.pie-pagina {
+  background-color: var(--bg-tarjeta);
+  border-top: 2px solid var(--acento-cian);
+  margin-top: 40px;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* formato del titulo de la seccion del footer */
+.titulo-footer {
+  color: var(--texto-amarillo);
+  margin-bottom: 10px;
+}
+
+/* lista horizontal de las redes sociales */
+.redes-lista {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+/* estilos para los enlaces de las redes sociales*/
+.red-enlace {
+  color: var(--acento-cian);
+  text-decoration: none;
+  font-weight: bold;
+}
