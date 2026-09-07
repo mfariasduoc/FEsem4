@@ -4,124 +4,299 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PixelVerse Games - Tu Tienda de Videojuegos</title>
-  <link rel="stylesheet" href="css/style.css">   
+  <!-- estilo bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- estilo personal -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* cambia las lineas por circulos amarillos */
+    .carousel-indicators [data-bs-target] {
+      width: 15px !important;
+      height: 15px !important;
+      border-radius: 50% !important;
+      background-color: var(--texto-amarillo) !important;
+      border: none !important;
+      opacity: 0.5; /* opaca los botones inactivos */
+      margin: 0 4px; /* espacio entre los circulos */
+    }
+
+    /* circulo activo */
+    .carousel-indicators .active {
+      opacity: 1 !important;
+      transform: scale(1.2); /* agranda el circulo cuando esta activo */
+    }
+  </style>
 </head>
 <body>
 
+  <!-- encabezado y barra de navegacion -->
   <header id="inicio">
-    <img src="images/logo.png" alt="Logotipo de PixelVerse Games" class="logo">
-    <h1>PixelVerse Games</h1>
-    <p class="header-subtitulo">Tu destino principal para los últimos lanzamientos, clásicos retro y accesorios gaming.</p>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom-card sticky-top shadow border-bottom border-secondary">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+          <img src="images/logo.png" alt="Logotipo de PixelVerse Games" style="height: 40px; width: auto;">
+          <span class="fw-bold text-custom-cyan">PixelVerse Games</span>
+        </a>
 
-    <nav class="menu-navegacion">
-      <ul class="menu-lista">
-        <li><a href="#inicio" class="menu-enlace activo">Inicio</a></li>
-        <li><a href="#productos" class="menu-enlace">Productos</a></li>
-        <li><a href="#contacto" class="menu-enlace">Contacto</a></li>
-      </ul>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuNavegacion">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-custom-yellow fw-bold" aria-current="page" href="#inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#productos">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
+
+    <!-- presentacion de la tienda -->
+    <section class="text-center py-5 border-bottom border-secondary bg-custom-card">
+      <div class="container py-3">
+        <h1 class="display-4 fw-bold text-custom-yellow">PixelVerse Games</h1>
+        <p class="lead col-lg-8 mx-auto" style="color: var(--texto-secundario);">
+          Tu destino principal para los últimos lanzamientos, clásicos retro y accesorios gaming.
+        </p>
+      </div>
+    </section>
   </header>
 
   <main>
-    <section id="productos">
-      <h2>Productos Destacados</h2>
-      <p class="seccion-descripcion">Explora nuestras mejores ofertas y los títulos más populares de la temporada.</p>
-      <div class="contenedor-grid">
-        <ul class="productos-lista">
-          <li>
-            <article class="tarjeta">
-              <h3 class="tarjeta-titulo">Soul Calibur</h3>
-              <img src="images/soul-calibur.jpg" alt="Portada del videojuego Soul Calibur" class="tarjeta-imagen">
-              <p class="tarjeta-descripcion">El mejor juego de luchas, considerado una obra maestra técnica y uno de los mejores juegos de la historia.</p>
-              <p class="tarjeta-precio"><strong>Precio:</strong> $50.000</p>
-              <a href="#comprar" class="btn-detalles">Ver detalles</a>
+    <!-- carrusel -->
+<section class="py-4">
+  <div class="container">
+    <!-- centra la columna de 6 en el medio -->
+    <div class="row justify-content-center">
+      
+      <!-- columna central del carrusel -->
+      <div class="col-12 col-md-6">
+        <div id="carruselJuegos" class="carousel slide shadow-lg rounded overflow-hidden" data-bs-ride="carousel">
+          
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carruselJuegos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carruselJuegos" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carruselJuegos" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carruselJuegos" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carruselJuegos" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carruselJuegos" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carruselJuegos" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#carruselJuegos" data-bs-slide-to="7" aria-label="Slide 8"></button>
+            <button type="button" data-bs-target="#carruselJuegos" data-bs-slide-to="8" aria-label="Slide 9"></button>
+            <button type="button" data-bs-target="#carruselJuegos" data-bs-slide-to="9" aria-label="Slide 10"></button>
+            <button type="button" data-bs-target="#carruselJuegos" data-bs-slide-to="10" aria-label="Slide 11"></button>
+            <button type="button" data-bs-target="#carruselJuegos" data-bs-slide-to="11" aria-label="Slide 12"></button>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item text-center active" data-bs-interval="3000">
+              <img src="images/img01.webp" class="d-block w-100 object-fit-cover" style="max-height: 350px;" alt="Imagen 1">
+            </div>
+            <div class="carousel-item text-center" data-bs-interval="3000">
+              <img src="images/img02.webp" class="d-block w-100 object-fit-cover" style="max-height: 350px;" alt="Imagen 2">
+            </div>
+            <div class="carousel-item text-center" data-bs-interval="3000">
+              <img src="images/img03.webp" class="d-block w-100 object-fit-cover" style="max-height: 350px;" alt="Imagen 3">
+            </div>
+            <div class="carousel-item text-center" data-bs-interval="3000">
+              <img src="images/img04.webp" class="d-block w-100 object-fit-cover" style="max-height: 350px;" alt="Imagen 4">
+            </div>
+            <div class="carousel-item text-center" data-bs-interval="3000">
+              <img src="images/img05.webp" class="d-block w-100 object-fit-cover" style="max-height: 350px;" alt="Imagen 5">
+            </div>
+            <div class="carousel-item text-center" data-bs-interval="3000">
+              <img src="images/img06.webp" class="d-block w-100 object-fit-cover" style="max-height: 350px;" alt="Imagen 6">
+            </div>
+            <div class="carousel-item text-center" data-bs-interval="3000">
+              <img src="images/img07.webp" class="d-block w-100 object-fit-cover" style="max-height: 350px;" alt="Imagen 7">
+            </div>
+            <div class="carousel-item text-center" data-bs-interval="3000">
+              <img src="images/img08.webp" class="d-block w-100 object-fit-cover" style="max-height: 350px;" alt="Imagen 8">
+            </div>
+            <div class="carousel-item text-center" data-bs-interval="3000">
+              <img src="images/img09.webp" class="d-block w-100 object-fit-cover" style="max-height: 350px;" alt="Imagen 9">
+            </div>
+            <div class="carousel-item text-center" data-bs-interval="3000">
+              <img src="images/img10.webp" class="d-block w-100 object-fit-cover" style="max-height: 350px;" alt="Imagen 10">
+            </div>
+            <div class="carousel-item text-center" data-bs-interval="3000">
+              <img src="images/img11.webp" class="d-block w-100 object-fit-cover" style="max-height: 350px;" alt="Imagen 11">
+            </div>
+            <div class="carousel-item text-center" data-bs-interval="3000">
+              <img src="images/img12.webp" class="d-block w-100 object-fit-cover" style="max-height: 350px;" alt="Imagen 12">
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carruselJuegos" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carruselJuegos" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- productos -->
+    <section id="productos" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold text-custom-yellow display-6">Productos Destacados</h2>
+          <p class="lead" style="color: var(--texto-secundario);">Explora nuestras mejores ofertas y los títulos más populares de la temporada.</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+          
+          <!-- tarjeta 1 -->
+          <div class="col">
+            <article class="card h-100 tarjeta bg-custom-card rounded-3 p-3 text-center">
+              <img src="images/soul-calibur.jpg" alt="Soul Calibur" class="card-img-top mx-auto rounded" style="max-width: 220px; height: 180px; object-fit: cover;">
+              <div class="card-body d-flex flex-column align-items-center p-2">
+                <h3 class="card-title h5 fw-bold text-white mt-2">Soul Calibur</h3>
+                <p class="card-text small flex-grow-1 my-2" style="color: var(--texto-secundario);">El mejor juego de luchas, considerado una obra maestra técnica y uno de los mejores juegos de la historia.</p>
+                <p class="card-text fw-bold mb-3" style="color: var(--texto-secundario);">Precio: <span class="text-custom-yellow">$50.000</span></p>
+                <a href="#comprar" class="btn btn-custom-cyan w-100 mt-auto py-2">Ver detalles</a>
+              </div>
             </article>
-          </li>
-          <li>
-            <article class="tarjeta">
-              <h3 class="tarjeta-titulo">Golden Axe II</h3>
-              <img src="images/golden-axe.jpg" alt="Portada del videojuego Golden Axe II" class="tarjeta-imagen">
-              <p class="tarjeta-descripcion">Es un juego de acción de tipo beat 'em up con desplazamiento lateral, lanzado por Sega en 1991 para la consola Sega Genesis.</p>
-              <p class="tarjeta-precio"><strong>Precio:</strong> $35.000</p>
-              <a href="#comprar" class="btn-detalles">Ver detalles</a>
+          </div>
+
+          <!-- tarjeta 2 -->
+          <div class="col">
+            <article class="card h-100 tarjeta bg-custom-card rounded-3 p-3 text-center">
+              <img src="images/golden-axe.jpg" alt="Golden Axe II" class="card-img-top mx-auto rounded" style="max-width: 220px; height: 180px; object-fit: cover;">
+              <div class="card-body d-flex flex-column align-items-center p-2">
+                <h3 class="card-title h5 fw-bold text-white mt-2">Golden Axe II</h3>
+                <p class="card-text small flex-grow-1 my-2" style="color: var(--texto-secundario);">Es un juego de acción de tipo beat 'em up con desplazamiento lateral, lanzado por Sega en 1991.</p>
+                <p class="card-text fw-bold mb-3" style="color: var(--texto-secundario);">Precio: <span class="text-custom-yellow">$35.000</span></p>
+                <a href="#comprar" class="btn btn-custom-cyan w-100 mt-auto py-2">Ver detalles</a>
+              </div>
             </article>
-          </li>
-          <li>
-            <article class="tarjeta">
-              <h3 class="tarjeta-titulo">Pac-Man</h3>
-              <img src="images/pac-man.jpg" alt="Portada del videojuego Pac-Man" class="tarjeta-imagen">
-              <p class="tarjeta-descripcion">Un remake del juego lanzado en 1999 para la primera PlayStation, un simpático y divertido plataformas en 3D.</p>
-              <p class="tarjeta-precio"><strong>Precio:</strong> $20.000</p>
-              <a href="#comprar" class="btn-detalles">Ver detalles</a>
+          </div>
+
+          <!-- tarjeta 3 -->
+          <div class="col">
+            <article class="card h-100 tarjeta bg-custom-card rounded-3 p-3 text-center">
+              <img src="images/pac-man.jpg" alt="Pac-Man" class="card-img-top mx-auto rounded" style="max-width: 220px; height: 180px; object-fit: cover;">
+              <div class="card-body d-flex flex-column align-items-center p-2">
+                <h3 class="card-title h5 fw-bold text-white mt-2">Pac-Man</h3>
+                <p class="card-text small flex-grow-1 my-2" style="color: var(--texto-secundario);">Un remake del juego lanzado en 1999 para la primera PlayStation, un simpático y divertido plataformas 3D.</p>
+                <p class="card-text fw-bold mb-3" style="color: var(--texto-secundario);">Precio: <span class="text-custom-yellow">$20.000</span></p>
+                <a href="#comprar" class="btn btn-custom-cyan w-100 mt-auto py-2">Ver detalles</a>
+              </div>
             </article>
-          </li>
-          <li>
-            <article class="tarjeta">
-              <h3 class="tarjeta-titulo">Rally-X</h3>
-              <img src="images/rally-x.jpg" alt="Portada del videojuego Rally-X" class="tarjeta-imagen">
-              <p class="tarjeta-descripcion">Rally-X es un clásico videojuego de laberintos y conducción lanzado en 1980 por la compañía japonesa Namco.</p>
-              <p class="tarjeta-precio"><strong>Precio:</strong> $10.000</p>
-              <a href="#comprar" class="btn-detalles">Ver detalles</a>
+          </div>
+
+          <!-- tarjeta 4 (estilo nth-child(4n)) -->
+          <div class="col">
+            <article class="card h-100 tarjeta bg-custom-card rounded-3 p-3 text-center">
+              <img src="images/rally-x.jpg" alt="Rally-X" class="card-img-top mx-auto rounded" style="max-width: 220px; height: 180px; object-fit: cover;">
+              <div class="card-body d-flex flex-column align-items-center p-2">
+                <h3 class="card-title h5 fw-bold text-white mt-2">Rally-X</h3>
+                <p class="card-text small flex-grow-1 my-2" style="color: var(--texto-secundario);">Rally-X es un clásico videojuego de laberintos y conducción lanzado en 1980 por Namco.</p>
+                <p class="card-text fw-bold mb-3" style="color: var(--texto-secundario);">Precio: <span class="text-custom-yellow">$10.000</span></p>
+                <a href="#comprar" class="btn btn-custom-cyan w-100 mt-auto py-2">Ver detalles</a>
+              </div>
             </article>
-          </li>
-          <li>
-            <article class="tarjeta">
-              <h3 class="tarjeta-titulo">Contra</h3>
-              <img src="images/contra.jpg" alt="Portada del videojuego Contra" class="tarjeta-imagen">
-              <p class="tarjeta-descripcion">Contra es un famoso videojuego de tipo run and gun (correr y disparar) creado y publicado por Konami.</p>
-              <p class="tarjeta-precio"><strong>Precio:</strong> $25.000</p>
-              <a href="#comprar" class="btn-detalles">Ver detalles</a>
+          </div>
+
+          <!-- tarjeta 5 -->
+          <div class="col">
+            <article class="card h-100 tarjeta bg-custom-card rounded-3 p-3 text-center">
+              <img src="images/contra.jpg" alt="Contra" class="card-img-top mx-auto rounded" style="max-width: 220px; height: 180px; object-fit: cover;">
+              <div class="card-body d-flex flex-column align-items-center p-2">
+                <h3 class="card-title h5 fw-bold text-white mt-2">Contra</h3>
+                <p class="card-text small flex-grow-1 my-2" style="color: var(--texto-secundario);">Contra es un famoso videojuego de tipo run and gun (correr y disparar) creado y publicado por Konami.</p>
+                <p class="card-text fw-bold mb-3" style="color: var(--texto-secundario);">Precio: <span class="text-custom-yellow">$25.000</span></p>
+                <a href="#comprar" class="btn btn-custom-cyan w-100 mt-auto py-2">Ver detalles</a>
+              </div>
             </article>
-          </li>
-          <li>
-            <article class="tarjeta">
-              <h3 class="tarjeta-titulo">Cadillacs and Dinosaurs</h3>
-              <img src="images/cadillacs-dinosaurs.jpg" alt="Portada del videojuego Cadillacs and Dinosaurs" class="tarjeta-imagen">
-              <p class="tarjeta-descripcion">Cadillacs and Dinosaurs es un famoso videojuego arcade de tipo beat 'em up lanzado por Capcom en 1992.</p>
-              <p class="tarjeta-precio"><strong>Precio:</strong> $35.000</p>
-              <a href="#comprar" class="btn-detalles">Ver detalles</a>
+          </div>
+
+          <!-- tarjeta 6 -->
+          <div class="col">
+            <article class="card h-100 tarjeta bg-custom-card rounded-3 p-3 text-center">
+              <img src="images/cadillacs-dinosaurs.jpg" alt="Cadillacs and Dinosaurs" class="card-img-top mx-auto rounded" style="max-width: 220px; height: 180px; object-fit: cover;">
+              <div class="card-body d-flex flex-column align-items-center p-2">
+                <h3 class="card-title h5 fw-bold text-white mt-2">Cadillacs and Dinosaurs</h3>
+                <p class="card-text small flex-grow-1 my-2" style="color: var(--texto-secundario);">Famoso videojuego arcade de tipo beat 'em up lanzado por Capcom en 1992.</p>
+                <p class="card-text fw-bold mb-3" style="color: var(--texto-secundario);">Precio: <span class="text-custom-yellow">$35.000</span></p>
+                <a href="#comprar" class="btn btn-custom-cyan w-100 mt-auto py-2">Ver detalles</a>
+              </div>
             </article>
-          </li>
-          <li>
-            <article class="tarjeta">
-              <h3 class="tarjeta-titulo">Sunset Riders</h3>
-              <img src="images/sunset-riders.jpg" alt="Portada del videojuego Sunset Riders" class="tarjeta-imagen">
-              <p class="tarjeta-descripcion">Trata sobre cuatro cazarrecompensas en el Lejano Oeste que buscan atrapar a varios forajidos.</p>
-              <p class="tarjeta-precio"><strong>Precio:</strong> $20.000</p>
-              <a href="#comprar" class="btn-detalles">Ver detalles</a>
+          </div>
+
+          <!-- tarjeta 7 -->
+          <div class="col">
+            <article class="card h-100 tarjeta bg-custom-card rounded-3 p-3 text-center">
+              <img src="images/sunset-riders.jpg" alt="Sunset Riders" class="card-img-top mx-auto rounded" style="max-width: 220px; height: 180px; object-fit: cover;">
+              <div class="card-body d-flex flex-column align-items-center p-2">
+                <h3 class="card-title h5 fw-bold text-white mt-2">Sunset Riders</h3>
+                <p class="card-text small flex-grow-1 my-2" style="color: var(--texto-secundario);">Trata sobre cuatro cazarrecompensas en el Lejano Oeste que buscan atrapar a varios forajidos.</p>
+                <p class="card-text fw-bold mb-3" style="color: var(--texto-secundario);">Precio: <span class="text-custom-yellow">$20.000</span></p>
+                <a href="#comprar" class="btn btn-custom-cyan w-100 mt-auto py-2">Ver detalles</a>
+              </div>
             </article>
-          </li>
-          <li>
-            <article class="tarjeta">
-              <h3 class="tarjeta-titulo">Pole Position</h3>
-              <img src="images/pole-position.jpg" alt="Portada del videojuego Pole Position" class="tarjeta-imagen">
-              <p class="tarjeta-descripcion">Fue el primer juego de conducción en usar una vista trasera del auto y una pista basada en un lugar real.</p>
-              <p class="tarjeta-precio"><strong>Precio:</strong> $35.000</p>
-              <a href="#comprar" class="btn-detalles">Ver detalles</a>
+          </div>
+
+          <!-- tarjeta 8 (estilo nth-child(4n)) -->
+          <div class="col">
+            <article class="card h-100 tarjeta bg-custom-card rounded-3 p-3 text-center">
+              <img src="images/pole-position.jpg" alt="Pole Position" class="card-img-top mx-auto rounded" style="max-width: 220px; height: 180px; object-fit: cover;">
+              <div class="card-body d-flex flex-column align-items-center p-2">
+                <h3 class="card-title h5 fw-bold text-white mt-2">Pole Position</h3>
+                <p class="card-text small flex-grow-1 my-2" style="color: var(--texto-secundario);">Primer juego de conducción en usar vista trasera del auto y una pista basada en un lugar real.</p>
+                <p class="card-text fw-bold mb-3" style="color: var(--texto-secundario);">Precio: <span class="text-custom-yellow">$35.000</span></p>
+                <a href="#comprar" class="btn btn-custom-cyan w-100 mt-auto py-2">Ver detalles</a>
+              </div>
             </article>
-          </li>
-        </ul>
+          </div>
+
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="pie-pagina">
-    <div class="footer-contenido">
-      <section id="contacto" class="seccion-contacto">
-        <h2 class="titulo-footer">Contacto e Información</h2>
-        <p>Dirección: Calle libertad s/n, San Antonio, Valparaíso</p>
-        <p>Email: soporte@pixelversegames.cl</p>
-        <nav class="redes-sociales">
-          <p>Síguenos en nuestras redes sociales:</p>
-          <ul class="redes-lista">
-            <li><a href="https://twitter.com" target="_blank" rel="noopener" class="red-enlace">Twitter</a></li>
-            <li><a href="https://instagram.com" target="_blank" rel="noopener" class="red-enlace">Instagram</a></li>
-          </ul>
-        </nav>
-        <p class="copyright">&copy; 2026 PixelVerse Games. Todos los derechos reservados.</p>
+  <!-- footer -->
+  <footer class="bg-custom-card text-white py-5 border-top border-secondary">
+    <div class="container">
+      <section id="contacto" class="text-center text-md-start">
+        <div class="row gy-4">
+          <div class="col-md-6">
+            <h2 class="h4 fw-bold text-custom-yellow mb-3">Contacto e Información</h2>
+            <p class="mb-1" style="color: var(--texto-secundario);"><strong>Dirección:</strong> Calle libertad s/n, San Antonio, Valparaíso</p>
+            <p class="mb-0" style="color: var(--texto-secundario);"><strong>Email:</strong> soporte@pixelversegames.cl</p>
+          </div>
+
+          <div class="col-md-6 text-md-end">
+            <p class="fw-bold mb-2">Síguenos en nuestras redes sociales:</p>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item"><a href="https://twitter.com" target="_blank" rel="noopener" class="btn btn-outline-info btn-sm">Twitter</a></li>
+              <li class="list-inline-item"><a href="https://instagram.com" target="_blank" rel="noopener" class="btn btn-outline-info btn-sm">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4 border-secondary">
+
+        <div class="text-center">
+          <p class="small mb-0" style="color: var(--texto-secundario);">&copy; 2026 PixelVerse Games. Todos los derechos reservados.</p>
+        </div>
       </section>
     </div>
   </footer>
 
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
