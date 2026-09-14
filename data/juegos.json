@@ -1,0 +1,114 @@
+[
+  {
+    "id": "producto-1",
+    "imagen": {
+      "src": "images/soul-calibur.jpg",
+      "alt": "Soul Calibur"
+    },
+    "titulo": "Soul Calibur",
+    "descripcion": "El mejor juego de luchas, considerado una obra maestra técnica y uno de los mejores juegos de la historia.",
+    "precio": "$50.000",
+    "boton": {
+      "texto": "Ver detalles",
+      "url": "#comprar"
+    }
+  },
+  {
+    "id": "producto-2",
+    "imagen": {
+      "src": "images/golden-axe.jpg",
+      "alt": "Golden Axe II"
+    },
+    "titulo": "Golden Axe II",
+    "descripcion": "Es un juego de acción de tipo beat 'em up con desplazamiento lateral, lanzado por Sega en 1991.",
+    "precio": "$35.000",
+    "boton": {
+      "texto": "Ver detalles",
+      "url": "#comprar"
+    }
+  },
+  {
+    "id": "producto-3",
+    "imagen": {
+      "src": "images/pac-man.jpg",
+      "alt": "Pac-Man"
+    },
+    "titulo": "Pac-Man",
+    "descripcion": "Un remake del juego lanzado en 1999 para la primera PlayStation, un simpático y divertido plataformas 3D.",
+    "precio": "$20.000",
+    "boton": {
+      "texto": "Ver detalles",
+      "url": "#comprar"
+    }
+  },
+  {
+    "id": "producto-4",
+    "imagen": {
+      "src": "images/rally-x.jpg",
+      "alt": "Rally-X"
+    },
+    "titulo": "Rally-X",
+    "descripcion": "Rally-X es un clásico videojuego de laberintos y conducción lanzado en 1980 por Namco.",
+    "precio": "$10.000",
+    "boton": {
+      "texto": "Ver detalles",
+      "url": "#comprar"
+    }
+  },
+  {
+    "id": "producto-5",
+    "imagen": {
+      "src": "images/contra.jpg",
+      "alt": "Contra"
+    },
+    "titulo": "Contra",
+    "descripcion": "Contra es un famoso videojuego de tipo run and gun (correr y disparar) creado y publicado por Konami.",
+    "precio": "$25.000",
+    "boton": {
+      "texto": "Ver detalles",
+      "url": "#comprar"
+    }
+  },
+  {
+    "id": "producto-6",
+    "imagen": {
+      "src": "images/cadillacs-dinosaurs.jpg",
+      "alt": "Cadillacs and Dinosaurs"
+    },
+    "titulo": "Cadillacs and Dinosaurs",
+    "descripcion": "Famoso videojuego arcade de tipo beat 'em up lanzado por Capcom en 1992.",
+    "precio": "$35.000",
+    "boton": {
+      "texto": "Ver detalles",
+      "url": "#comprar"
+    }
+  },
+  {
+    "id": "producto-7",
+    "imagen": {
+      "src": "images/sunset-riders.jpg",
+      "alt": "Sunset Riders"
+    },
+    "titulo": "Sunset Riders",
+    "descripcion": "Trata sobre cuatro cazarrecompensas en el Lejano Oeste que buscan atrapar a varios forajidos.",
+    "precio": "$20.000",
+    "boton": {
+      "texto": "Ver detalles",
+      "url": "#comprar"
+    }
+  },
+  {
+    "id": "producto-8",
+    "imagen": {
+      "src": "images/pole-position.jpg",
+      "alt": "Pole Position"
+    },
+    "titulo": "Pole Position",
+    "descripcion": "Primer juego de conducción en usar vista trasera del auto y una pista basada en un lugar real.",
+    "precio": "$35.000",
+    "boton": {
+      "texto": "Ver detalles",
+      "url": "#comprar"
+    }
+  }
+]
